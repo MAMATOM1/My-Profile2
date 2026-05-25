@@ -223,14 +223,15 @@
         align-items:center;
     }
 
-    .featured-video video{
-        width:70%;
+    .featured-video img{
+        width:100%;
         height:400px;
         object-fit:cover;
+        display:block;
     }
 
     .featured-content{
-        width:70%;
+        width:50%;
         padding:30px;
     }
 
@@ -291,10 +292,11 @@
       box-shadow:0 10px 30px rgba(56,189,248,0.2);
     }
 
-    .video-card video{
+    .video-card img{
       width:100%;
       height:220px;
       object-fit:cover;
+      display:block;
     }
 
     .video-info{
@@ -310,7 +312,7 @@
       font-size:14px;
     }
 
-    .vertical-video video{
+    .vertical-video img{
     height:500px;
     object-fit:contain;
     background:black;
@@ -368,12 +370,12 @@
   }
 
   /* วิดีโอหลัก */
-  .featured-video video{
+  .featured-video img{
     height:250px;
   }
 
   /* วิดีโอรอง */
-  .video-card video{
+  .video-card img{
     height:180px;
   }
 
@@ -395,7 +397,7 @@
     flex-direction:column;
   }
 
-  .featured-video video,
+  .featured-video img,
   .featured-content{
     width:100%;
   }
@@ -461,13 +463,13 @@
     transform:scale(1.1);
   }
 
-  .social-buttons{
-  display:flex;
-  justify-content:center;
-  gap:25px;
-  margin-top:30px;
-  flex-wrap:wrap;
-}
+    .social-buttons{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-top:30px;
+    flex-wrap:wrap;
+    }
 
   .social-btn{
     width:70px;
@@ -493,6 +495,63 @@
     object-fit:contain;
   }
 
+    .video-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+    }
+
+    .vertical-video img{
+    height:500px;
+    object-fit:contain;
+    background:black;
+    }
+
+
+    /* =========================
+    ปุ่มเล่นกลางรูป
+    ========================= */
+
+    .video-link{
+    position:relative;
+    display:block;
+    }
+
+    .play-btn{
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:75px;
+    height:75px;
+
+    border-radius:50%;
+
+    background:rgba(0,0,0,0.65);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+    font-size:32px;
+
+    transition:0.3s;
+    backdrop-filter:blur(5px);
+    }
+
+    .video-link:hover .play-btn{
+    transform:translate(-50%,-50%) scale(1.1);
+
+    background:#38bdf8;
+    color:black;
+
+    box-shadow:0 0 25px rgba(56,189,248,0.5);
+    }
   </style>
 </head>
 <body>
@@ -561,9 +620,11 @@
             วิดีโอหลัก
         ========================= -->
     <div class="featured-video">
-      <video controls autoplay muted loop>
-          <source src="Editna.mp4" type="video/mp4">
-      </video>
+      <a href="https://youtu.be/TxKnuBqPh10" target="_blank" class="video-link">
+        <img src="คอนเทน ตัด.jpg" alt="featured">
+        <div class="play-btn">▶</div>
+
+        </a>
 
     <!-- ข้อความ -->
       <div class="featured-content">
@@ -586,9 +647,11 @@
       <div class="video-card">
 
         <!-- ใส่วิดีโอ -->
-        <video controls poster="vido1.jpg">
-          <source src="MV เพื่อน(ไม่)สนิท.mp4" type="video/mp4">
-        </video>
+        <a href="https://drive.google.com/file/d/15CxnMv_tQHKYlpFbvDWn6wTsxTcxqhbz/view?usp=sharing" target="_blank" class="video-link">
+
+            <img src="vido1.jpg" alt="MV เพื่อน(ไม่)สนิท">
+            <div class="play-btn">▶</div>
+        </a>
 
         <div class="video-info">
 
@@ -610,9 +673,11 @@
       --------------------- -->
       <div class="video-card">
 
-        <video controls>
-          <source src="MV1.mp4" type="video/mp4">
-        </video>
+        <a href="https://youtu.be/-a7_YVW2Spc" target="_blank" class="video-link">
+
+        <img src="ปก เพื่อนเล่นไม่เล่นเพื่อน.jpg" alt="MV เพื่อนเล่นไม่เล่นเพื่อน">
+        <div class="play-btn">▶</div>
+        </a>
 
         <div class="video-info">
 
@@ -632,9 +697,11 @@
       --------------------- -->
       <div class="video-card">
 
-        <video controls poster="ปก3.jpg">
-          <source src="347909765_6115946831775910_1649329928447680747_n.mp4" type="video/mp4">
-        </video>
+        <a href="https://youtu.be/jI0xvauaDsA" target="_blank" class="video-link">
+
+        <img src="ปก3.jpg" alt="Present พรรคสภานักเรียน">
+        <div class="play-btn">▶</div>
+        </a>
 
         <div class="video-info">
             <h3>วีดีโอ Present พรรคสภานักเรียน</h3>
@@ -653,9 +720,11 @@
       --------------------- -->
       <div class="video-card">
 
-        <video controls poster="vido4.png">
-          <source src="หนังสั้น1.mp4" type="video/mp4">
-        </video>
+        <a href="https://youtu.be/HIs008eZRDU" target="_blank" class="video-link">
+
+        <img src="vido4.png" alt="หนังสั้น">
+        <div class="play-btn">▶</div>
+        </a>
 
         <div class="video-info">
 
@@ -675,9 +744,11 @@
       --------------------- -->
     <div class="video-card vertical-video">
 
-      <video controls poster="NANO.png">
-        <source src="nano.mp4" type="video/mp4">
-      </video>
+        <a href="https://youtube.com/shorts/1o83qLmLGrk?feature=share" target="_blank" class="video-link">
+
+        <img src="NANO.png" alt="Game short">
+        <div class="play-btn">▶</div>
+        </a>
 
       <div class="video-info">
         <h3>Game short</h3>
@@ -691,9 +762,11 @@
       --------------------- -->
       <div class="video-card">
 
-    <video controls poster="vido6.jpg">
-      <source src="บ้านเกิดเมืองนอน.mp4" type="video/mp4">
-    </video>
+        <a href="https://youtu.be/xd4P0CF3iwY" target="_blank" class="video-link">
+
+        <img src="vido6.jpg" alt="บ้านเกิดเมืองนอน">
+        <div class="play-btn">▶</div>
+        </a>
 
     <div class="video-info">
 
